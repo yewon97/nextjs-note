@@ -1,15 +1,20 @@
 import Link from 'next/link'
 import React from 'react'
 
+const products = ['shirt','pants','skirt','shoes']
+
 export default function Produce() {
 	return (
 		<>
 			<div>Produce</div>
 			<ul>
-				<li><Link href="/products/shirt">shirt</Link></li>
-				<li><Link href="/products/pants">pants</Link></li>
-				<li><Link href="/products/skirt">skirt</Link></li>
-				<li><Link href="/products/shoes">shoes</Link></li>
+				{
+					products.map((product, index) => (
+						<li key={index}>
+							<Link href={`/products/${product}`}>{product}</Link>
+						</li>
+					))
+				}
 			</ul>
 		</>
 	)
