@@ -3,11 +3,13 @@ import { getProducts } from '@/service/products'
 import Link from 'next/link'
 import React from 'react'
 import styles from './page.module.css'
+import clothesImage from '../../../public/images/clothes.jpg'
+import Image from 'next/image';
 
 // export const revalidate = 3;
 
 export default async function Produce() {
-	throw new Error();
+	// throw new Error();
 	// 서버 파일(데이터베이스)에 있는 제품의 리스트를 읽어와서, 그걸 보여줌
 
 	const products = await getProducts();
@@ -19,6 +21,7 @@ export default async function Produce() {
 	return (
 		<>
 			<div>Produce</div>
+			<Image src={clothesImage} alt="Clothes" priority />
 			<ul>
 				{
 					products.map((product, index) => (
