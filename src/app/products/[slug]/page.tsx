@@ -1,4 +1,5 @@
 import { getProduct, getProducts } from '@/service/products';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import React from 'react'
 
@@ -30,7 +31,10 @@ export default async function ProductPage({params : {slug}} : Props) {
 	}
 
 	return (
-		<div>{product.name} 설명</div>
+		<>
+			<div>{product.name} 설명</div>
+			<Image src={`/images/${product.image}`} alt={product.name} width='300' height={300} />
+		</>
 	)
 }
 
