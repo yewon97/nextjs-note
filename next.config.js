@@ -24,6 +24,18 @@ const nextConfig = {
 				permanent: false,
 			}
 		]
+	},
+	async rewrites() {
+		return [
+			{
+				source : '/yewon',
+				destination: '/about/me/yewon',
+			},
+			{
+				source : '/items/:slub',
+				destination: '/products/:slub',
+			}
+		]
 	}
 }
 
